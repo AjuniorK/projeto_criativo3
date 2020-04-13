@@ -1,0 +1,130 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+    <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+        <changeSet id="1" author="sha">
+            <sql>
+                create table  usuario(
+                id BIGINT NOT NULL AUTO_INCREMENT,
+                nome VARCHAR(50) NOT NULL,
+                login VARCHAR(20) NOT NULL,
+                senha VARCHAR(50) NOT NULL,
+                profissao VARCHAR(20) NOT NULL,
+                escola VARCHAR(20) NOT NULL,
+                role VARCHAR(10) NOT NULL,
+                PRIMARY KEY (id)
+                );
+            </sql>
+            <rollback>
+                DROP TABLE usuario;
+            </rollback>
+        </changeSet>
+
+    <changeSet id="2" author="sha">
+        <sql>
+            create table editora (
+            ideditora integer(11) primary key NOT NULL,
+            nome varchar(50) NOT NULL,
+            endereco varchar(50) NOT NULL
+            );
+        </sql>
+        <rollback>
+            DROP TABLE editora;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="3" author="sha">
+        <sql>
+            create table autor (
+            idautor integer(11) primary key NOT NULL,
+            nome varchar(50) NOT NULL
+            );
+        </sql>
+        <rollback>
+            DROP TABLE autor;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="4" author="sha">
+        <sql>
+            create table escola (
+            idescola integer(11) primary key NOT NULL,
+            nome varchar(50) NOT NULL,
+            endereco varchar(250) NOT NULL
+            );
+        </sql>
+        <rollback>
+            DROP TABLE escola;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="5" author="sha">
+        <sql>
+            CREATE TABLE livros (
+            ISBN VARCHAR(13) NOT NULL PRIMARY KEY,
+            Titulo VARCHAR(255) NOT NULL,
+            Edicao INTEGER NOT NULL,
+            Copyright VARCHAR(4) NOT NULL
+            );
+        </sql>
+        <rollback>
+            DROP TABLE livros;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="6" author="sha">
+        <sql>
+            CREATE TABLE autorISBN (
+            idautor INTEGER NOT NULL,
+            ISBN VARCHAR(13) NOT NULL,
+            FOREIGN KEY (idautor) REFERENCES autor(idautor),
+            FOREIGN KEY (ISBN) REFERENCES livros(ISBN)
+            );
+
+        </sql>
+        <rollback>
+            DROP TABLE autorISBN;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="7" author="sha">
+        <sql>
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('0132152134','Projeto de Algoritmos em C',2,'2004');
+
+            INSERT INTO autor (idautor,nome) VALUES (1,'Machado de Assis');
+            INSERT INTO autor (idautor,nome) VALUES (2,'Gregório de Matos');
+
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'0132152134');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'0132152134');
+
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('0132151421','Introdução a linguagem Pascal',3,'2006');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'0132151421');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'0132151421');
+
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('0132575663','Java como programar',4,'2008');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'0132575663');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'0132575663');
+
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('0132662361','Treinamento em linguagem C',5,'2010');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'0132662361');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'0132662361');
+
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('0132404168','Lógica de Programação',6,'2011');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'0132404168');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'0132404168');
+
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('013705842X','Algoritmos',3,'2012');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'013705842X');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'013705842X');
+
+
+            INSERT INTO livros (ISBN,Titulo,Edicao,Copyright) VALUES ('0132121360','Introdução a Ciência da Computação',8,'2013');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (1,'0132121360');
+            INSERT INTO autorISBN (idautor,ISBN) VALUES (2,'0132121360');
+
+        </sql>
+        <rollback>
+            DROP TABLE livros;
+            DROP TABLE autorISBN;
+        </rollback>
+    </changeSet>
+
+    </databaseChangeLog>

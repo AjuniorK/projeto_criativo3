@@ -13,20 +13,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="nome")
+    private String nome;
 
-    @Column(name="username")
-    private String username;
+    @Column(name="login")
+    private String login;
 
-    @Column(name="password")
-    private String password;
+    @Column(name="senha")
+    private String senha;
 
-    @Column(name="profession")
-    private String profession;
+    @Column(name="profissao")
+    private String profissao;
 
-    @Column(name="school")
-    private String school;
+    @Column(name="escola")
+    private String escola;
 
     @Enumerated(EnumType.STRING)
     @Column(name="role")
