@@ -139,5 +139,8 @@
       }
     }
   },
-  "defaultProject": "client-product-management"
+  "defaultProject": "client-product-management",
+  "cli": {
+    "analytics": "9ca5b2e4-8d21-47ce-94a3-9d1ded8a9015"
+  }
 }
