@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
     //It will be provided on WebSecurityConfig as @Bean
-
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override

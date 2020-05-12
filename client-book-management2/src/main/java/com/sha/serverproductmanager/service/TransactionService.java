@@ -1,6 +1,6 @@
-package com.sha.serverproductmanager.service;
+package com.sha.serverbookmanager.service;
 
-import com.sha.serverproductmanager.model.Transaction;
+import com.sha.serverbookmanager.model.Transaction;
 
 import java.util.List;
 

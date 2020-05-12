@@ -1,7 +1,7 @@
-package com.sha.serverproductmanager.service;
+package com.sha.serverbookmanager.service;
 
-import com.sha.serverproductmanager.model.User;
-import com.sha.serverproductmanager.repository.UserRepository;
+import com.sha.serverbookmanager.model.User;
+import com.sha.serverbookmanager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,6 +1,6 @@
-package com.sha.serverproductmanager.service;
+package com.sha.serverbookmanager.service;
 
-import com.sha.serverproductmanager.model.User;
+import com.sha.serverbookmanager.model.User;
 
 import java.util.List;
 

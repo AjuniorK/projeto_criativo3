@@ -1,7 +1,7 @@
-package com.sha.serverproductmanager.config;
+package com.sha.serverbookmanager.config;
 
-import com.sha.serverproductmanager.jwt.JWTAuthorizationFilter;
-import com.sha.serverproductmanager.jwt.JwtTokenProvider;
+import com.sha.serverbookmanager.jwt.JWTAuthorizationFilter;
+import com.sha.serverbookmanager.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

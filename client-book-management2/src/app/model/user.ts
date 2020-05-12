@@ -8,4 +8,5 @@ export class User {
   nome: string="";
   escola: string="";
   role: Role;
+  token: string="";
 }

@@ -1,10 +1,10 @@
-package com.sha.serverproductmanager;
+package com.sha.serverbookmanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServerProductManagementApplicationTests {
+class ServerBookManagementApplicationTests {
 
 	@Test
 	void contextLoads() {

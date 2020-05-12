@@ -12,14 +12,12 @@ import com.sha.serverproductmanager.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.time.LocalDateTime;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
 
@@ -35,13 +33,15 @@ public class UserController {
     @Autowired
     private TransactionService transactionService;
 
+
     @PostMapping("api/user/registration")
     public ResponseEntity<?> register(@RequestBody User user){
         if (userService.findByUsername(user.getNome()) !=null){
+            System.out.println("teste1");
             return new ResponseEntity<>(HttpStatus.CONFLICT);
 
         }
-
+        System.out.println("teste2");
         user.setRole(Role.USER);
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }

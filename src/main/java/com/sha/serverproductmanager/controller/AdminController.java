@@ -9,11 +9,9 @@ import com.sha.serverproductmanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 public class AdminController {
     @Autowired
     private UserService userService;
@@ -40,6 +38,7 @@ public class AdminController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/admin/user-all")
     public ResponseEntity<?> findAllUsers(){
         return new ResponseEntity<>(userService.findAllUsers(), HttpStatus.OK);
@@ -70,6 +69,7 @@ public class AdminController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/admin/book-all")
     public ResponseEntity<?> findAllBook(){
         return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
@@ -83,11 +83,13 @@ public class AdminController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/admin/transaction-all")
     public ResponseEntity<?> findAllTransactions(){
         return new ResponseEntity<>(transactionService.findAllTransactions(), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("api/admin/transaction-number")
     public ResponseEntity<?> numberOfTransactions(){
         Long number = transactionService.numberOfTransactions();

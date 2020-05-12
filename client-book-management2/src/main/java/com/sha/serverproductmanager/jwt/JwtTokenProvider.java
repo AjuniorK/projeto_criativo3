@@ -1,4 +1,4 @@
-package com.sha.serverproductmanager.jwt;
+package com.sha.serverbookmanager.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

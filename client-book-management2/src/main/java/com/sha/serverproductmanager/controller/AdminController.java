@@ -1,11 +1,11 @@
-package com.sha.serverproductmanager.controller;
+package com.sha.serverbookmanager.controller;
 
-import com.sha.serverproductmanager.model.Book;
-import com.sha.serverproductmanager.model.StringResponse;
-import com.sha.serverproductmanager.model.User;
-import com.sha.serverproductmanager.service.BookService;
-import com.sha.serverproductmanager.service.TransactionService;
-import com.sha.serverproductmanager.service.UserService;
+import com.sha.serverbookmanager.model.Book;
+import com.sha.serverbookmanager.model.StringResponse;
+import com.sha.serverbookmanager.model.User;
+import com.sha.serverbookmanager.service.BookService;
+import com.sha.serverbookmanager.service.TransactionService;
+import com.sha.serverbookmanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

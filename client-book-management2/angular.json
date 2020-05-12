@@ -29,7 +29,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "bookion": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -65,8 +65,8 @@
             "browserTarget": "client-book-management2:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "client-book-management2:build:production"
+            "bookion": {
+              "browserTarget": "client-book-management2:build:bookion"
             }
           }
         },
@@ -113,8 +113,8 @@
             "devServerTarget": "client-book-management2:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "client-book-management2:serve:production"
+            "bookion": {
+              "devServerTarget": "client-book-management2:serve:bookion"
             }
           }
         }

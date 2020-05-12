@@ -23,6 +23,11 @@ describe('AppComponent', () => {
   it(`should have as title 'client-book-management2'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+    app.use(function (req, res, nex) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+    });
     expect(app.title).toEqual('client-book-management2');
   });
 

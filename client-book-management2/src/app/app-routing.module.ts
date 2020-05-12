@@ -9,6 +9,7 @@ import {DashboardComponent} from './components/admin/dashboard/dashboard.compone
 import {UserListComponent} from './components/admin/user-list/user-list.component';
 import {BookListComponent} from './components/admin/book-list/book-list.component';
 import {UnathorizedComponent} from './components/error/unathorized/unathorized.component';
+import {TransactionListComponent} from './components/admin/transaction-list/transaction-list.component';
 import {NotFoundComponent} from './components/error/not-found/not-found.component';
 import {AuthGuard} from './guards/auth.guard';
 import {Role} from './model/role';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: {roles: [Role.ADMIN]}},
   {path: 'user-list', component: UserListComponent, canActivate: [AuthGuard], data: {roles: [Role.ADMIN]}},
   {path: 'book-list', component: BookListComponent, canActivate: [AuthGuard], data: {roles: [Role.ADMIN]}},
+  {path: 'transaction-list', component: TransactionListComponent, canActivate: [AuthGuard], data: {roles: [Role.ADMIN]}},
 
   //Pág. erros
   {path: '404', component: NotFoundComponent},
@@ -42,7 +44,7 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {
-constructor(private router: Router) {
+constructor(public router: Router) {
   this.router.errorHandler = (error: any) => {
     this.router.navigate(['/404']);
   }

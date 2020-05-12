@@ -28,13 +28,14 @@ export class UserService {
     const headers = new HttpHeaders(user ? {
       authorization:'Basic ' + btoa(user.login + ':' + user.senha)
     }:{});
-
+    //console.log(this.http.get<any> (API_URL + "login", {headers: headers}));
     return this.http.get<any> (API_URL + "login", {headers: headers})
     .pipe(map(response => {
       if(response){
         localStorage.setItem('currentUser', JSON.stringify(response));
         this.currentUserSubject.next(response);
       }
+
       return response;
     }));
   }

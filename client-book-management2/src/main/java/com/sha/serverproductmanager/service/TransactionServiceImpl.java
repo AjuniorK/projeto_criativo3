@@ -1,7 +1,7 @@
-package com.sha.serverproductmanager.service;
+package com.sha.serverbookmanager.service;
 
-import com.sha.serverproductmanager.model.Transaction;
-import com.sha.serverproductmanager.repository.TransactionRepository;
+import com.sha.serverbookmanager.model.Transaction;
+import com.sha.serverbookmanager.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

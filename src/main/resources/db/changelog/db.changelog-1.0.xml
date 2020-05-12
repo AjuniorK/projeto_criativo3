@@ -127,4 +127,33 @@
         </rollback>
     </changeSet>
 
-    </databaseChangeLog>
+    <changeSet id="8" author="sha">
+        <sql>
+            create table  user(
+            id BIGINT NOT NULL AUTO_INCREMENT,
+            nome VARCHAR(50) NOT NULL,
+            login VARCHAR(20) NOT NULL,
+            senha VARCHAR(50) NOT NULL,
+            profissao VARCHAR(20) NOT NULL,
+            escola VARCHAR(20) NOT NULL,
+            role VARCHAR(10) NOT NULL,
+            PRIMARY KEY (id)
+            );
+        </sql>
+        <rollback>
+            DROP TABLE user;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="9" author="sha">
+        <sql>
+            Alter table  user
+            MODIFY COLUMN senha VARCHAR(200) NOT NULL;
+        </sql>
+        <rollback>
+            DROP TABLE user;
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

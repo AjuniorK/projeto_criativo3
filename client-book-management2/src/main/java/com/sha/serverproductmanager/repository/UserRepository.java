@@ -1,6 +1,6 @@
-package com.sha.serverproductmanager.repository;
+package com.sha.serverbookmanager.repository;
 
-import com.sha.serverproductmanager.model.User;
+import com.sha.serverbookmanager.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

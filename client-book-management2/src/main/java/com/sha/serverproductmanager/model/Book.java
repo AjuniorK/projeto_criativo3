@@ -1,4 +1,4 @@
-package com.sha.serverproductmanager.model;
+package com.sha.serverbookmanager.model;
 
 import lombok.Data;
 

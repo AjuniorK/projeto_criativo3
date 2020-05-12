@@ -1,6 +1,6 @@
-package com.sha.serverproductmanager.repository;
+package com.sha.serverbookmanager.repository;
 
-import com.sha.serverproductmanager.model.Book;
+import com.sha.serverbookmanager.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
