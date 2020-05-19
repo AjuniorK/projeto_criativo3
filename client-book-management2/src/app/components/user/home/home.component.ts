@@ -49,6 +49,7 @@ export class HomeComponent implements OnInit {
 
   findAllBooks(){
     this.userService.findAllBooks().subscribe(data => {
+      console.log(data);
       this.bookList = data;
       this.dataSource.data = data;
     });

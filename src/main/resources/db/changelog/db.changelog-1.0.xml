@@ -155,5 +155,43 @@
         </rollback>
     </changeSet>
 
+    <changeSet id="10" author="sha">
+        <sql>
+            CREATE TABLE book (
+            id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            ISBN VARCHAR(13) NOT NULL,
+            Titulo VARCHAR(255) NOT NULL,
+            Edicao INTEGER NOT NULL,
+            Copyright VARCHAR(4) NOT NULL
+            );
+        </sql>
+        <rollback>
+            DROP TABLE livros;
+        </rollback>
+    </changeSet>
+
+    <changeSet id="11" author="sha">
+        <sql>
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('0132152134','Projeto de Algoritmos em C',2,'2004');
+
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('0132151421','Introdução a linguagem Pascal',3,'2006');
+
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('0132575663','Java como programar',4,'2008');
+
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('0132662361','Treinamento em linguagem C',5,'2010');
+
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('0132404168','Lógica de Programação',6,'2011');
+
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('013705842X','Algoritmos',3,'2012');
+
+            INSERT INTO book (ISBN,Titulo,Edicao,Copyright) VALUES ('0132121360','Introdução a Ciência da Computação',8,'2013');
+
+        </sql>
+        <rollback>
+            DROP TABLE livros;
+            DROP TABLE autorISBN;
+        </rollback>
+    </changeSet>
+
 
 </databaseChangeLog>

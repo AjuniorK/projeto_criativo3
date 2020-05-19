@@ -38,7 +38,6 @@ public class AdminController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/admin/user-all")
     public ResponseEntity<?> findAllUsers(){
         return new ResponseEntity<>(userService.findAllUsers(), HttpStatus.OK);
@@ -69,7 +68,6 @@ public class AdminController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/admin/book-all")
     public ResponseEntity<?> findAllBook(){
         return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
@@ -83,13 +81,11 @@ public class AdminController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/admin/transaction-all")
     public ResponseEntity<?> findAllTransactions(){
         return new ResponseEntity<>(transactionService.findAllTransactions(), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("api/admin/transaction-number")
     public ResponseEntity<?> numberOfTransactions(){
         Long number = transactionService.numberOfTransactions();

@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 import java.time.LocalDateTime;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
 
@@ -37,11 +36,9 @@ public class UserController {
     @PostMapping("api/user/registration")
     public ResponseEntity<?> register(@RequestBody User user){
         if (userService.findByUsername(user.getNome()) !=null){
-            System.out.println("teste1");
             return new ResponseEntity<>(HttpStatus.CONFLICT);
 
         }
-        System.out.println("teste2");
         user.setRole(Role.USER);
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
@@ -50,7 +47,6 @@ public class UserController {
     public ResponseEntity<?> getUser(Principal principal){
         //principal = httpServletRequest.getUserPrincipal.
         if(principal == null){
-            //logout will also use here so we should return ok http status.
             return ResponseEntity.ok(principal);
         }
         UsernamePasswordAuthenticationToken authenticationToken =

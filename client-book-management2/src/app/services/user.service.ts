@@ -26,8 +26,10 @@ export class UserService {
 
   login(user: User): Observable<any> {
     const headers = new HttpHeaders(user ? {
-      authorization:'Basic ' + btoa(user.login + ':' + user.senha)
+      Authorization:'Basic ' + btoa(user.login + ':' + user.senha)
     }:{});
+    console.log(user.login + ':' + user.senha);
+
     //console.log(this.http.get<any> (API_URL + "login", {headers: headers}));
     return this.http.get<any> (API_URL + "login", {headers: headers})
     .pipe(map(response => {
@@ -54,6 +56,7 @@ export class UserService {
   }
 
   findAllBooks(): Observable<any> {
+    console.log(API_URL + "book");
     return this.http.get(API_URL + "book",
   {headers: {"Content-Type":"application/json; charset=UTF-8"}});
   }
