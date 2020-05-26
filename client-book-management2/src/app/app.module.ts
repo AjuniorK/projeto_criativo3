@@ -53,6 +53,7 @@ import { MatTreeModule } from '@angular/material/tree';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import {HttpParams} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component'
 

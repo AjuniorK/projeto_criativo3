@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {User} from '../model/user';
@@ -26,8 +26,14 @@ export class UserService {
   }
 
   login(user: User): Observable<any> {
-    return this.http.post(API_URL + "login", JSON.stringify(user),
-  {headers: {"Content-Type":"application/json; charset=UTF-8"}});
+  //   console.log(user.login)
+  //   return this.http.get(API_URL + "login", user.login,
+  // {headers: {"Content-Type":"application/string; charset=UTF-8"}});
+  let params = new HttpParams();
+  params = params.set('login', user.login);
+
+    //return this.httpClient.get('dentists/', {params: params});
+    return this.http.get(API_URL + "login", {params: params});
   }
 
   logOut(): Observable<any> {

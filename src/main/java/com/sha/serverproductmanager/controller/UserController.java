@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "")
 @RestController
 public class UserController {
 
@@ -39,8 +39,8 @@ public class UserController {
     }
 
     //@PostMapping("/api/user/login")
-    @RequestMapping(value = "/api/user/login", method = {RequestMethod.POST })
-    public ResponseEntity<?> getUser(@RequestBody User user){
+    @RequestMapping(value = "/api/user/login")
+    public ResponseEntity<?> getUser(@RequestParam("login") String login){
         //principal = httpServletRequest.getUserPrincipal.
 //        if(principal == null){
 //            return ResponseEntity.ok(principal);
