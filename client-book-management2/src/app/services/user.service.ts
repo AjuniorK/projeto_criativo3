@@ -11,6 +11,7 @@ let API_URL = "http://localhost:8080/api/user/";
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   public currentUser: Observable<User>;
   private currentUserSubject: BehaviorSubject<User>;
@@ -25,21 +26,8 @@ export class UserService {
   }
 
   login(user: User): Observable<any> {
-    const headers = new HttpHeaders(user ? {
-      Authorization:'Basic ' + btoa(user.login + ':' + user.senha)
-    }:{});
-    console.log(user.login + ':' + user.senha);
-
-    //console.log(this.http.get<any> (API_URL + "login", {headers: headers}));
-    return this.http.get<any> (API_URL + "login", {headers: headers})
-    .pipe(map(response => {
-      if(response){
-        localStorage.setItem('currentUser', JSON.stringify(response));
-        this.currentUserSubject.next(response);
-      }
-
-      return response;
-    }));
+    return this.http.post(API_URL + "login", JSON.stringify(user),
+  {headers: {"Content-Type":"application/json; charset=UTF-8"}});
   }
 
   logOut(): Observable<any> {

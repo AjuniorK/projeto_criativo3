@@ -22,7 +22,7 @@ const routes: Routes = [
   //Usuário pages
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent},
   {path: 'detail', component: DetailComponent},
   {path: 'detail/:id', component: DetailComponent},
 

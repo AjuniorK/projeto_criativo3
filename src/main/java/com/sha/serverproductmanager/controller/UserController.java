@@ -1,27 +1,22 @@
 package com.sha.serverproductmanager.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import com.sha.serverproductmanager.jwt.JwtTokenProvider;
 import com.sha.serverproductmanager.model.Role;
 import com.sha.serverproductmanager.model.User;
 import com.sha.serverproductmanager.model.Transaction;
-import com.sha.serverproductmanager.repository.BookRepository;
 import com.sha.serverproductmanager.service.BookService;
 import com.sha.serverproductmanager.service.TransactionService;
 import com.sha.serverproductmanager.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.time.LocalDateTime;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class UserController {
 
-    @Autowired
-    private JwtTokenProvider tokenProvider;
 
     @Autowired
     private UserService userService;
@@ -43,18 +38,19 @@ public class UserController {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
-    @GetMapping("/api/user/login")
-    public ResponseEntity<?> getUser(Principal principal){
+    //@PostMapping("/api/user/login")
+    @RequestMapping(value = "/api/user/login", method = {RequestMethod.POST })
+    public ResponseEntity<?> getUser(@RequestBody User user){
         //principal = httpServletRequest.getUserPrincipal.
-        if(principal == null){
-            return ResponseEntity.ok(principal);
-        }
-        UsernamePasswordAuthenticationToken authenticationToken =
-                (UsernamePasswordAuthenticationToken) principal;
-        User user = userService.findByUsername(authenticationToken.getName());
-        user.setToken(tokenProvider.generateToken(authenticationToken));
+//        if(principal == null){
+//            return ResponseEntity.ok(principal);
+//        }
+//        UsernamePasswordAuthenticationToken authenticationToken =
+//                (UsernamePasswordAuthenticationToken) principal;
+        User user_response = userService.findByUsername("aaa");
+        //user.setToken(tokenProvider.generateToken(authenticationToken));
 
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>(user_response, HttpStatus.OK);
     }
 
     @PostMapping("/api/user/trade")

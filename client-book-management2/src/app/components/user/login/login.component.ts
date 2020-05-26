@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.userService.login(this.user).subscribe(data => {
+      console.log("login TESTE");
       console.log(this.userService);
+      //localStorage.setItem("currentUser", JSON.stringify(this.userService.currentUser));
 
       this.router.navigate(['/profile']);
     },err => {

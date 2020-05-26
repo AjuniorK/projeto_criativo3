@@ -3,8 +3,7 @@ package com.sha.serverproductmanager.service;
 import com.sha.serverproductmanager.model.User;
 import com.sha.serverproductmanager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,17 +15,15 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
     //It will be provided on WebSecurityConfig as @Bean
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    //@Autowired
+    //private PasswordEncoder passwordEncoder;
 
-    private PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+
 
     @Override
     public User saveUser(User user){
-        String encodedPassword = new BCryptPasswordEncoder().encode(user.getSenha());
-        user.setSenha(encodedPassword);
+        //String encodedPassword = new BCryptPasswordEncoder().encode(user.getSenha());
+        //user.setSenha(encodedPassword);
         return userRepository.save(user);
 
     }
