@@ -14,4 +14,6 @@ public interface BookService {
     Long numberOfBooks();
 
     List<Book> findAllBooks();
+
+    List<Book> findAllBooksUser(Long user_id);
 }

@@ -193,5 +193,19 @@
         </rollback>
     </changeSet>
 
+    <changeSet id="12" author="sha">
+        <sql>
+            CREATE TABLE transaction (
+            id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            user_id VARCHAR(50) NOT NULL,
+            book_id VARCHAR(50) NOT NULL,
+            trade_date DATETIME NOT NULL
+            );
+        </sql>
+        <rollback>
+            DROP TABLE livros;
+        </rollback>
+    </changeSet>
+
 
 </databaseChangeLog>

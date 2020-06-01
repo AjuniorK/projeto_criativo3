@@ -33,6 +33,7 @@ export class UserService {
   params = params.set('login', user.login);
 
     //return this.httpClient.get('dentists/', {params: params});
+    //localStorage.setItem("currentUser", JSON.stringify(this.userService));
     return this.http.get(API_URL + "login", {params: params});
   }
 

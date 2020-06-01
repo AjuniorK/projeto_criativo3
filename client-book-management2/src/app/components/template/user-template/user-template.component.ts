@@ -23,6 +23,7 @@ export class UserTemplateComponent implements OnInit {
 
   logOut(){
     this.userService.logOut().subscribe(data => {
+      console.log("data");
       this.router.navigate(['/login']);
     });
   }

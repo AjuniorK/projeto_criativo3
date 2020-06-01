@@ -38,6 +38,11 @@ public class UserController {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
+    @PostMapping("api/user/logout")
+    public void logout(@RequestBody User user){
+        //return new ResponseEntity<>("logout user", HttpStatus.OK);
+    }
+
     //@PostMapping("/api/user/login")
     @RequestMapping(value = "/api/user/login")
     public ResponseEntity<?> getUser(@RequestParam("login") String login){
@@ -47,7 +52,7 @@ public class UserController {
 //        }
 //        UsernamePasswordAuthenticationToken authenticationToken =
 //                (UsernamePasswordAuthenticationToken) principal;
-        User user_response = userService.findByUsername("aaa");
+        User user_response = userService.findByUsername(login);
         //user.setToken(tokenProvider.generateToken(authenticationToken));
 
         return new ResponseEntity<>(user_response, HttpStatus.OK);
@@ -62,6 +67,11 @@ public class UserController {
 
     @GetMapping("/api/user/book")
     public ResponseEntity<?> getAllBooks(){
+        return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
+    }
+
+    @GetMapping("/api/user/bookUser")
+    public ResponseEntity<?> getAllBooksUser(){
         return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
     }
 

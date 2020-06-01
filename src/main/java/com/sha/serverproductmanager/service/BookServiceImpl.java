@@ -39,6 +39,11 @@ public class BookServiceImpl implements BookService {
     public List<Book> findAllBooks(){
         return bookRepository.findAll();
     }
+
+    @Override
+    public List<Book> findAllBooksUser(String user_id){
+        return bookRepository.findByUserId(user_id);
+    }
 }
 
 

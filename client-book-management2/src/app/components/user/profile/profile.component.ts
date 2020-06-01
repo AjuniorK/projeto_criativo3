@@ -14,14 +14,16 @@ export class ProfileComponent implements OnInit {
 
   constructor(private userService: UserService, public router: Router) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(localStorage);
+    console.log(localStorage.getItem('currentUser'));
    }
 
   ngOnInit() {
   }
 
   logOut(){
+    console.log("data");
     this.userService.logOut().subscribe(data => {
+
       this.router.navigate(['/login']);
     });
   }
