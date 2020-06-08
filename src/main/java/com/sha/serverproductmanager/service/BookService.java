@@ -15,5 +15,5 @@ public interface BookService {
 
     List<Book> findAllBooks();
 
-    List<Book> findAllBooksUser(Long user_id);
+//    List<Book> findAllBooksUser(Long user_id);
 }

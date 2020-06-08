@@ -70,10 +70,10 @@ public class UserController {
         return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
     }
 
-    @GetMapping("/api/user/bookUser")
-    public ResponseEntity<?> getAllBooksUser(){
-        return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
-    }
+//    @GetMapping("/api/user/bookUser")
+//    public ResponseEntity<?> getAllBooksUser(){
+//        return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
+//    }
 
 
 

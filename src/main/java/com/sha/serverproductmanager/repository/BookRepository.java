@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     //find by username
-    List<Book> findBookByUserId (String user_id);
+//    List<Book> findBookByUserId (String user_id);
 }

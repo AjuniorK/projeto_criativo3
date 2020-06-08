@@ -41,10 +41,10 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAll();
     }
 
-    @Override
-    public List<Book> findAllBooksUser(Long user_id) {
-        return bookRepository.findBookByUserId(user_id.toString());
-    }
+//    @Override
+//    public List<Book> findAllBooksUser(Long user_id) {
+//        return bookRepository.findBookByUserId(user_id.toString());
+//    }
 
 }
 
