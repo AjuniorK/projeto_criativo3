@@ -1,6 +1,8 @@
 <div class="container">
   <header class="jumbotron">
-    <h1 class="display-3"><strong>{{currentUser.nome}}</strong>, Welcome to my app.</h1>
+    <img src="assets/imgs/pessoa.png" width="100" height="100" class="d-inline-block align-top" id="pessoa"/>
+    <h1 class="display-3"><strong>{{currentUser.nome}}</strong> -  Informações do Perfil.</h1>
   </header>
-  <a class="btn btn-link log-out" (click)="logOut()">LogOut</a>
+  <a class="btn btn-lg btn-primary btn-block btn-signin form-submit-button" (click)="logOut()">Sair</a>
+  <!-- <button class="btn btn-lg btn-primary btn-block btn-signin form-submit-button" type="submit">Entrar</button> -->
 </div>

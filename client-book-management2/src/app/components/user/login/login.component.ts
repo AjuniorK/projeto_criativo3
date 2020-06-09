@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css','./css/animate.css','./css/icomoon.css','./css/bootstrap.css','./css/magnific-popup.css','./css/owl.carousel.min.css','./css/owl.theme.default.min.css','./css/flexslider.css','./css/pricing.css','./css/style.css']
 })
 export class LoginComponent implements OnInit {
   user: User = new User();
